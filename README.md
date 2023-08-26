@@ -1,6 +1,6 @@
 # TextBlaster
 
-**[Download TextBlaster here](https://github.com/Coder-256/TextBlaster/releases/download/latest/TextBlaster.dmg)**
+**[Download TextBlaster here](https://github.com/Coder-256/TextBlaster/releases/latest/download/TextBlaster.dmg)**
 
 Send out a text blast using the Messages app on macOS.
 
