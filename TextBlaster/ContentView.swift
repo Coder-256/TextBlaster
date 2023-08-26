@@ -64,6 +64,8 @@ struct ContentView: View {
                 }
                 .disabled(frozen)
 
+                Divider().padding(.vertical, 10)
+
                 Text("Errors:")
                 List(sendNotifier.errors) { errorInstance in
                     HStack {

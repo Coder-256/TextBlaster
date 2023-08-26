@@ -17,7 +17,7 @@ enum MessageSendError: LocalizedError {
         case .appNotFound:
             return "Messages app not found."
         case .success:
-            return "No errors detected! (NOTE: you should still check for \"Message Failed to Send\")."
+            return "Done! NOTE: you should check for \"Message Failed to Send\" errors."
         }
     }
 }
