@@ -11,6 +11,8 @@
 		5D3977492A9A73FA00C725E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3977482A9A73FA00C725E6 /* ContentView.swift */; };
 		5D39774B2A9A73FB00C725E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D39774A2A9A73FB00C725E6 /* Assets.xcassets */; };
 		5D39774E2A9A73FB00C725E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D39774D2A9A73FB00C725E6 /* Preview Assets.xcassets */; };
+		5D39775A2A9A75B600C725E6 /* MessageSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3977592A9A75B600C725E6 /* MessageSender.swift */; };
+		5D39775F2A9A782800C725E6 /* MessagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D39775E2A9A782800C725E6 /* MessagesHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,11 @@
 		5D39774A2A9A73FB00C725E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D39774D2A9A73FB00C725E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5D39774F2A9A73FB00C725E6 /* TextBlaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextBlaster.entitlements; sourceTree = "<group>"; };
+		5D3977552A9A758000C725E6 /* Messages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Messages.h; path = TextBlaster/Messages.h; sourceTree = SOURCE_ROOT; };
+		5D3977562A9A759000C725E6 /* TextBlaster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TextBlaster-Bridging-Header.h"; sourceTree = "<group>"; };
+		5D3977592A9A75B600C725E6 /* MessageSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSender.swift; sourceTree = "<group>"; };
+		5D39775D2A9A782800C725E6 /* MessagesHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesHelper.h; sourceTree = "<group>"; };
+		5D39775E2A9A782800C725E6 /* MessagesHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +61,14 @@
 			children = (
 				5D3977462A9A73FA00C725E6 /* TextBlasterApp.swift */,
 				5D3977482A9A73FA00C725E6 /* ContentView.swift */,
+				5D3977592A9A75B600C725E6 /* MessageSender.swift */,
 				5D39774A2A9A73FB00C725E6 /* Assets.xcassets */,
 				5D39774F2A9A73FB00C725E6 /* TextBlaster.entitlements */,
 				5D39774C2A9A73FB00C725E6 /* Preview Content */,
+				5D3977552A9A758000C725E6 /* Messages.h */,
+				5D39775D2A9A782800C725E6 /* MessagesHelper.h */,
+				5D39775E2A9A782800C725E6 /* MessagesHelper.m */,
+				5D3977562A9A759000C725E6 /* TextBlaster-Bridging-Header.h */,
 			);
 			path = TextBlaster;
 			sourceTree = "<group>";
@@ -101,6 +113,7 @@
 				TargetAttributes = {
 					5D3977422A9A73FA00C725E6 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -139,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D39775F2A9A782800C725E6 /* MessagesHelper.m in Sources */,
 				5D3977492A9A73FA00C725E6 /* ContentView.swift in Sources */,
+				5D39775A2A9A75B600C725E6 /* MessageSender.swift in Sources */,
 				5D3977472A9A73FA00C725E6 /* TextBlasterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TextBlaster/TextBlaster.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -279,15 +295,19 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "TextBlaster needs access to Messages in order to send texts.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.jacobgreenfield.TextBlaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TextBlaster/TextBlaster-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -297,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TextBlaster/TextBlaster.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -306,15 +327,18 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "TextBlaster needs access to Messages in order to send texts.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.jacobgreenfield.TextBlaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TextBlaster/TextBlaster-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
