@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/Coder-256/TextBlaster/main/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>Sd7aI+qIGoCc7mgM2WEQ9nVO4ai6alG0VHq0JsBVdrU=</string>
+</dict>
+</plist>

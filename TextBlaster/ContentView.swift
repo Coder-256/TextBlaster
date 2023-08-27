@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class ErrorInstance: Identifiable {
+fileprivate class ErrorInstance: Identifiable {
     let error: Error
 
     init(error: Error) {
@@ -16,7 +16,7 @@ class ErrorInstance: Identifiable {
     }
 }
 
-class SendNotifier: ObservableObject {
+fileprivate class SendNotifier: ObservableObject {
     @Published var errors: [ErrorInstance] = []
     @Published var inProgress = false
 }
@@ -36,10 +36,10 @@ extension View {
 }
 
 struct ContentView: View {
-    @State var phoneNumbers = ""
-    @State var message = ""
-    @State var frozen = false // try to prevent double-sending
-    @ObservedObject var sendNotifier = SendNotifier()
+    @State private var phoneNumbers = ""
+    @State private var message = ""
+    @State private var frozen = false // try to prevent double-sending
+    @ObservedObject private var sendNotifier = SendNotifier()
 
     var body: some View {
         ZStack {
@@ -57,7 +57,7 @@ struct ContentView: View {
 
                     // use asyncAfter so it will run after UI displays the progress indicator
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                        sendNotifier.errors = send(phoneNumbers: phoneNumbers, message: message)
+                        sendNotifier.errors = sendBlast(message: message, phoneNumberString: phoneNumbers)
                             .map(ErrorInstance.init(error:))
                         sendNotifier.inProgress = false
                     }

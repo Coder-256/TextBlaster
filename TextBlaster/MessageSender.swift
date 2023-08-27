@@ -22,13 +22,13 @@ enum MessageSendError: LocalizedError {
     }
 }
 
-func send(phoneNumbers phoneNumberString: String, message: String) -> [Error] {
+func sendBlast(message: String, phoneNumberString: String) -> [Error] {
     guard let messagesApp = SBApplication(bundleIdentifier: "com.apple.MobileSMS") else {
         return [MessageSendError.appNotFound]
     }
     let phoneNumbers = phoneNumberString
         .split(whereSeparator: { $0.isNewline || $0 == "," })
         .map({ $0.trimmingCharacters(in: .whitespaces) })
-    let errors = MessagesHelper(application: messagesApp).sendMessage(message, toPhoneNumbers: phoneNumbers)
+    let errors = MessagesHelper(application: messagesApp).sendBlast(message, toPhoneNumbers: phoneNumbers)
     return errors.isEmpty ? [MessageSendError.success] : errors
 }

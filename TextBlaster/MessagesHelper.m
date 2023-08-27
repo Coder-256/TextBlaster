@@ -26,8 +26,8 @@
     return self;
 }
 
-- (NSArray<NSError *> *)sendMessage:(nonnull NSString *)message
-                     toPhoneNumbers:(nonnull NSArray<NSString *> *)phoneNumbers {
+- (NSArray<NSError *> *)sendBlast:(nonnull NSString *)message
+                   toPhoneNumbers:(nonnull NSArray<NSString *> *)phoneNumbers {
     _errors = [NSMutableArray array];
     for (NSString *phoneNumber in phoneNumbers) {
         MessagesParticipant *participant = [_messagesApp.participants objectWithName:phoneNumber];

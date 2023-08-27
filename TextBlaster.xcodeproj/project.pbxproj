@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D3165D92A9BC67E003C1E2C /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 5D3165D82A9BC67E003C1E2C /* Sparkle */; };
+		5D3165DC2A9BCA4F003C1E2C /* Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3165DB2A9BCA4F003C1E2C /* Sparkle.swift */; };
 		5D3977472A9A73FA00C725E6 /* TextBlasterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3977462A9A73FA00C725E6 /* TextBlasterApp.swift */; };
 		5D3977492A9A73FA00C725E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3977482A9A73FA00C725E6 /* ContentView.swift */; };
 		5D39774B2A9A73FB00C725E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D39774A2A9A73FB00C725E6 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D3165DA2A9BC777003C1E2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5D3165DB2A9BCA4F003C1E2C /* Sparkle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sparkle.swift; sourceTree = "<group>"; };
 		5D3977432A9A73FA00C725E6 /* TextBlaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextBlaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3977462A9A73FA00C725E6 /* TextBlasterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlasterApp.swift; sourceTree = "<group>"; };
 		5D3977482A9A73FA00C725E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D3165D92A9BC67E003C1E2C /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +64,11 @@
 		5D3977452A9A73FA00C725E6 /* TextBlaster */ = {
 			isa = PBXGroup;
 			children = (
+				5D3165DA2A9BC777003C1E2C /* Info.plist */,
 				5D3977462A9A73FA00C725E6 /* TextBlasterApp.swift */,
 				5D3977482A9A73FA00C725E6 /* ContentView.swift */,
 				5D3977592A9A75B600C725E6 /* MessageSender.swift */,
+				5D3165DB2A9BCA4F003C1E2C /* Sparkle.swift */,
 				5D39774A2A9A73FB00C725E6 /* Assets.xcassets */,
 				5D39774F2A9A73FB00C725E6 /* TextBlaster.entitlements */,
 				5D39774C2A9A73FB00C725E6 /* Preview Content */,
@@ -97,6 +104,9 @@
 			dependencies = (
 			);
 			name = TextBlaster;
+			packageProductDependencies = (
+				5D3165D82A9BC67E003C1E2C /* Sparkle */,
+			);
 			productName = TextBlaster;
 			productReference = 5D3977432A9A73FA00C725E6 /* TextBlaster.app */;
 			productType = "com.apple.product-type.application";
@@ -126,6 +136,9 @@
 				Base,
 			);
 			mainGroup = 5D39773A2A9A73FA00C725E6;
+			packageReferences = (
+				5D3165D72A9BC67E003C1E2C /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			productRefGroup = 5D3977442A9A73FA00C725E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -152,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D3165DC2A9BCA4F003C1E2C /* Sparkle.swift in Sources */,
 				5D39775F2A9A782800C725E6 /* MessagesHelper.m in Sources */,
 				5D3977492A9A73FA00C725E6 /* ContentView.swift in Sources */,
 				5D39775A2A9A75B600C725E6 /* MessageSender.swift in Sources */,
@@ -295,6 +309,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TextBlaster/Info.plist;
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "TextBlaster needs access to Messages in order to send texts.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -327,6 +342,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TextBlaster/Info.plist;
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "TextBlaster needs access to Messages in order to send texts.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -365,6 +381,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5D3165D72A9BC67E003C1E2C /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5D3165D82A9BC67E003C1E2C /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D3165D72A9BC67E003C1E2C /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D39773B2A9A73FA00C725E6 /* Project object */;
 }
