@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>TextBlaster</title>
+        <item>
+            <title>1.0</title>
+            <pubDate>Sun, 27 Aug 2023 14:43:58 -0400</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://raw.githubusercontent.com/Coder-256/TextBlaster/releases/download/1.0/TextBlaster%201.0.dmg" length="884860" type="application/octet-stream" sparkle:edSignature="xbDMCblh8vyAhVGWz6dC1oK7eVbvIYV8OBHJ+mi+/yt6Dly7EUasV5xzn9r1vuS6Ek/LbSbPWBfUSrYn7H30AA=="/>
+        </item>
+    </channel>
+</rss>
