@@ -3,6 +3,14 @@
     <channel>
         <title>TextBlaster</title>
         <item>
+            <title>1.0.1</title>
+            <pubDate>Thu, 31 Aug 2023 14:05:23 -0400</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/Coder-256/TextBlaster/releases/download/1.0.1/TextBlaster.dmg" length="886031" type="application/octet-stream" sparkle:edSignature="KiNRl7MmSTOEuFJD6l0J+DjIOt+1pj4x5Jom5zGPj1KURpVBzBHUPw/S/MnfFWSLQA5q2yRkMhy5fS9Q0nJnAw=="/>
+        </item>
+        <item>
             <title>1.0</title>
             <pubDate>Sun, 27 Aug 2023 14:43:58 -0400</pubDate>
             <sparkle:version>1</sparkle:version>
