@@ -57,8 +57,14 @@ struct ContentView: View {
 
                     // use asyncAfter so it will run after UI displays the progress indicator
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                        sendNotifier.errors = sendBlast(message: message, phoneNumberString: phoneNumbers)
+                        let errors = sendBlast(message: message, phoneNumberString: phoneNumbers)
                             .map(ErrorInstance.init(error:))
+                        if errors.isEmpty {
+                            // user canceled
+                            frozen = false
+                        } else {
+                            sendNotifier.errors = errors
+                        }
                         sendNotifier.inProgress = false
                     }
                 }
